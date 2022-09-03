@@ -97,9 +97,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>me.aglerr.mclibs</groupId>
+            <groupId>com.github.mdaffa48</groupId>
             <artifactId>MCLibs</artifactId>
-            <version>0.1.7</version>
+            <version>0.1.5</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

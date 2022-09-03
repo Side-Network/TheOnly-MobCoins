@@ -97,7 +97,7 @@ public class EntityDeathListener implements Listener {
                 return;
             }
 
-            MobCoinsReceiveEvent receiveEvent = new MobCoinsReceiveEvent(player, entity, amountDrop, false, null, false);
+            MobCoinsReceiveEvent receiveEvent = new MobCoinsReceiveEvent(player, entity, amountDrop);
             Bukkit.getPluginManager().callEvent(receiveEvent);
             if(receiveEvent.isCancelled()) return;
 

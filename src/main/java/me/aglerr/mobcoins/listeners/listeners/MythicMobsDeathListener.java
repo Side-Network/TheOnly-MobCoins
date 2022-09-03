@@ -76,7 +76,7 @@ public class MythicMobsDeathListener implements Listener {
                 return;
             }
 
-            MobCoinsReceiveEvent receiveEvent = new MobCoinsReceiveEvent(player, (LivingEntity) entity, amountDrop, true, event.getMobType(), false);
+            MobCoinsReceiveEvent receiveEvent = new MobCoinsReceiveEvent(player, (LivingEntity) entity, amountDrop);
             Bukkit.getPluginManager().callEvent(receiveEvent);
             if (receiveEvent.isCancelled()) return;
 
