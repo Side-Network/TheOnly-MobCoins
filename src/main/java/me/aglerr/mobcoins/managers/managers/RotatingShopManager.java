@@ -70,7 +70,7 @@ public class RotatingShopManager implements Manager {
         }
 
         // Shuffle the normal items
-        Collections.shuffle(normalItems);
+//        Collections.shuffle(normalItems);
 
         // Add them back to the rotating items list
         shopManager.getItemsLoader().getRotatingItems().addAll(normalItems);
@@ -112,7 +112,7 @@ public class RotatingShopManager implements Manager {
         }
 
         // Shuffle the normal items
-        Collections.shuffle(specialItems);
+//        Collections.shuffle(specialItems);
 
         // Add them back to the rotating items list
         shopManager.getItemsLoader().getRotatingItems().addAll(specialItems);
