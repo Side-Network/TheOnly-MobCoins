@@ -5,6 +5,7 @@ import me.aglerr.mclibs.inventory.SimpleInventory;
 import me.aglerr.mclibs.libs.Common;
 import me.aglerr.mclibs.libs.Debug;
 import me.aglerr.mclibs.libs.Executor;
+import me.aglerr.mclibs.xseries.XMaterial;
 import me.aglerr.mobcoins.MobCoins;
 import me.aglerr.mobcoins.PlayerData;
 import me.aglerr.mobcoins.api.MobCoinsAPI;
@@ -16,6 +17,7 @@ import me.aglerr.mobcoins.managers.managers.StockManager;
 import me.aglerr.mobcoins.shops.items.TypeItem;
 import me.aglerr.mobcoins.utils.ItemManager;
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -193,6 +195,11 @@ public class RotatingShopInventory extends SimpleInventory {
         if(playerCoins < item.getPrice()){
             player.sendMessage(Common.color(ConfigValue.MESSAGES_NOT_ENOUGH_COINS
                     .replace("{prefix}", ConfigValue.PREFIX)));
+            return;
+        }
+
+        if(!ItemManager.checkInventory(player, new ItemStack(XMaterial.valueOf(item.getMaterial()).parseMaterial(), item.getAmount()))){
+            player.sendMessage(Common.color(ConfigValue.MESSAGES_NO_SPACE.replace("{prefix}", ConfigValue.PREFIX)));
             return;
         }
 

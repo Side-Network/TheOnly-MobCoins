@@ -16,10 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class ItemManager {
 
@@ -105,6 +102,18 @@ public class ItemManager {
         NBTItem nbtItem = new NBTItem(stack);
         nbtItem.setDouble("mobCoinsAmount", amount);
         return nbtItem.getItem();
+    }
+
+    public static boolean checkInventory(Player p, ItemStack item) {
+        if (p.getInventory().firstEmpty() >= 0 && item.getAmount() <= item.getMaxStackSize()) {
+            return true;
+        }
+        Map<Integer, ? extends ItemStack> items = p.getInventory().all(item.getType());
+        int amount = item.getAmount();
+        for (ItemStack i : items.values()) {
+            amount -= i.getMaxStackSize() - i.getAmount();
+        }
+        return amount <= 0; // more than 0 means there are items that can't be placed
     }
 
 }

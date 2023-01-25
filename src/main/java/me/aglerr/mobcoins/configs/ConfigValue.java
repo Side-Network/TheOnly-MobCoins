@@ -128,6 +128,7 @@ public class ConfigValue {
     // Executes Commands
     public static boolean CATEGORY_COMMANDS_ENABLED;
     public static List<String> CATEGORY_COMMANDS_COMMANDS;
+    public static String MESSAGES_NO_SPACE;
 
 
     public static void initializeValue(){
@@ -179,6 +180,7 @@ public class ConfigValue {
         MESSAGES_FINISHED_LOAD_DATA = config.getString("messages.finishedLoadData");
         MESSAGES_SALARY_ADDED = config.getString("messages.salaryAdded");
         MESSAGES_SALARY_REMOVED = config.getString("messages.salaryRemoved");
+        MESSAGES_NO_SPACE = config.getString("messages.no-space");
 
         MESSAGES_HELP = config.getStringList("messages.help");
         MESSAGES_HELP_ADMIN = config.getStringList("messages.helpAdmin");

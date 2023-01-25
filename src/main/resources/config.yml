@@ -162,6 +162,7 @@ actionBar:
 
 messages:
   prefix: "&e[MobCoins]"
+  no-space: "{prefix} &cYou don't have enough space in your inventory!"
   noPermission: "{prefix} &cYou don't have enough permission!"
   reload: "{prefix} &aYou have reloaded the configuration &7(took {ms}ms)"
   balance: "{prefix} &fYour coins: &e{coins}"
